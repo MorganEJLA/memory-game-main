@@ -1,187 +1,105 @@
 * {
+  margin: 0 auto;
   padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-html {
-  max-height: 100vh;
 }
 body {
+  background-color: rgb(8, 7, 7);
+  font-family: "Nunito", sans-serif;
+}
+.container {
+  width: 70%;
+  max-width: 900px;
   margin: 0 auto;
-  background: rgb(2, 0, 36);
+  padding: 20px;
+  border-radius: 10px;
+  background: rgb(4, 106, 56);
   background: linear-gradient(
-    circle,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(35, 35, 135, 1) 12%,
-    rgba(0, 212, 255, 1) 100%
+    72deg,
+    rgba(4, 106, 56, 1) 26%,
+    rgba(218, 41, 28, 1) 80%
   );
-  font-family: "Abril Fatface", cursive;
-  font-family: "Architects Daughter", cursive;
-
 }
 
-.page-title {
-  color: mediumvioletred;
-  font-family: Abril Fatface;
-  font-weight: normal;
+h1 {
   text-align: center;
-  font-size: 4em;
+  font-weight: 700;
+  font-size: 50px;
+  padding-bottom: 10px;
 }
 
-.game-info-container {
-  grid-column: 1 / -1;
+p {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.actions {
   display: flex;
-  justify-content: space-between;
-}
-
-.game-info {
-  font-family: Abril Fatface, serif;
-  color: rgb(15, 47, 48);
-  font-size: 2em;
-}
-
-.game-container {
-  display: grid;
-  grid-template-columns: repeat(4, auto);
-  grid-gap: 10px;
-  margin: 50px;
   justify-content: center;
-  perspective: 500px;
-  max-height: 50vh;
-  padding-bottom: 45px;
+}
+
+.actions button {
+  padding: 8px 16px;
+  font-size: 30px;
+  border-radius: 10px;
+  background-color: #27ae60;
+  color: white;
+}
+.grid-container {
+  display: grid;
+  justify-content: center;
+  grid-gap: 26px;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
 }
 
 .card {
+  height: calc(120px / 2 * 3);
+  width: 120px;
+  border-radius: 10px;
+  background-color: white;
   position: relative;
-  height: 150px;
-  width: 140px;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease-in-out;
 }
 
-
-
-.card-face {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  backface-visibility: hidden;
-  border-radius: 12px;
-  border-width: 1px;
-  border-style: solid;
-  transition: transform 500ms ease-in-out;
+.front-image {
+  width: 60px;
+  height: 60px;
 }
 
-.card.visible .card-back {
-  transform: rotateY(-180deg);
+.card .front-image {
+  max-width: 100%;
+  height: auto;
 }
 
-.card.visible .card-front {
-  transform: rotateY(0);
-}
-
-.card.matched .card-value {
-  animation: tada 1s linear 1 300ms;
-}
-
-.overlay-text {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  justify-content: center;
-  align-items: center;
-  z-index: 100;
-  color: #2b7c54;
-  font-family: "Josefin Sans", sans-serif;
-}
-
-.overlay-text-small {
-  font-size: 0.3em;
-}
-
-.overlay-text.visible {
-  display: flex;
-  flex-direction: column;
-  animation: overlay-grow 500ms forwards;
-}
-
-@keyframes overlay-grow {
-  from {
-    background-color: rgba(0, 0, 0, 0);
-    font-size: 0;
-  }
-  to {
-    background-color: rgba(0, 0, 0, 0.8);
-    font-size: 10em;
-  }
-}
-
-@keyframes tada {
-  0% {
-    transform: scale(1);
-  }
-  10%,
-  20% {
-    transform: scale(0.9) rotate(-3deg);
-  }
-  30%,
-  50%,
-  70%,
-  90% {
-    transform: scale(1.1) rotate(3deg);
-  }
-  40%,
-  60%,
-  80% {
-    transform: scale(1.1) rotate(-3deg);
-  }
-  100% {
-    transform: scale(1) rotate(0);
-  }
-}
-
-.card-back {
-  background-color: black;
-  border-color: cadetblue;
-}
-
-.card-front {
-  background-color: #89fff5;
-  border-color: #333;
+.card.flipped {
   transform: rotateY(180deg);
 }
 
-.card-value {
-  transition: transform 100ms ease-in-out;
-  transform: scale(0.9);
+.front,
+.back {
+  backface-visibility: hidden;
+  position: absolute;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }
 
-.card-front:hover .card-value {
-  transform: scale(1);
+.card .front {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.tile {
-  align-self: flex-start;
-  transform: translateY(-10px);
-  transition: transform 100ms ease-in-out;
+.card .back {
+  background-image: url("card-back-rooster.png");
+  background-position: center center;
+  background-size: cover;
+  backface-visibility: hidden;
 }
 
-.card-back:hover .tile {
-  transform: translateY(0);
-}
-
-@media (max-width: 600px) {
-  .game-container {
-    grid-template-columns: repeat(2, auto);
-  }
-
-  .game-info-container {
-    flex-direction: column;
-    align-items: center;
-  }
+.card .front {
+  transform: rotateY(180deg);
 }

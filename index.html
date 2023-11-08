@@ -1,209 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Architects+Daughter&display=swap" rel="stylesheet">
-  <link href="style.css" rel="stylesheet">
-  <script src="app.js" async></script>
-  <title>Women in Art</title>
-</head>
+    <title>Memory Card Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Match Game | Portugal</h1>
+      <div class="grid-container"></div>
+      <p>Score: <span class="score"></span></p>
+      <p>Highest Score: <span class="highest-score"></span></p>
+      <p>Time: <span class="timer">0</span></p>
 
-<body>
-  <h1 class="page-title">Match the Artists</h1>
-  <div class="overlay-text visible">
-    Click to Start
-  </div>
-  <div id="game-over-text" class="overlay-text">
-    GAME OVER
-    <span class="overlay-text-small">Click to Restart</span>
-  </div>
-  <div id="victory-text" class="overlay-text">
-    VICTORY
-    <span class="overlay-text-small">Click to Restart</span>
-  </div>
-  <div class="game-container">
-    <div class="game-info-container">
-      <div class="game-info">
-        Time <span id="time-remaining">100</span>
-      </div>
-      <div class="game-info">
-        Flips <span id="flips">0</span>
+      <div class="actions">
+        <button onclick="restart()">Restart</button>
+        <button onclick="new_theme()">New Theme</button>
       </div>
     </div>
-    <!--something needs to go here as another container. need to clean this part up-->
-    <div class="card"><!--card one-->
-      <div class="card-back card-face">
-      
-        <img class="tile" src="images/tile.png" alt = "tile">
-      </div>
-      <div class="card-front card-face">
-        
-        <img class="card-value" src="images/cipe pineles.jpeg" alt = "Cipe Pineles">
-      </div>
-    </div>
-    <div class="card">
-        <div class="card-back card-face">
-        
-          <img class="tile" src="images/tile.png" alt = "tile">
-        </div>
-        <div class="card-front card-face">
-        
-          <img class="card-value" src="images/cipe pineles.jpeg" alt = "Cipe Pineles">
-        </div>
-    </div>
-    <div class="card"><!--card two-->
-      <div class="card-back card-face">
-       
-        <img class="tile" src="images/tile.png" alt = "tile">
-      </div>
-      <div class="card-front card-face">
-
-        <img class="card-value" src="images/savage.jpeg" alt = "Augusta Savage">
-      </div>
-    </div>
-    <div class="card">
-        <div class="card-back card-face">
-         
-          <img class="tile" src="images/tile.png" alt = "tile">
-        </div>
-        <div class="card-front card-face">
-         
-          <img class="card-value" src="images/savage.jpeg" alt = "Augusta Savage">
-        </div>
-      </div>
-    <div class="card"><!--card three-->
-      <div class="card-back card-face">
-
-        <img class="tile" src="images/tile.png" alt = "tile">
-      </div>
-      <div class="card-front card-face">
-       
-        <img class="card-value" src="images/tarsila.jpeg" alt = "Tarsila">
-      </div>
-    </div>
-    <div class="card">
-        <div class="card-back card-face">
-         
-          <img class="tile" src="images/tile.png" alt = "tile">
-        </div>
-        <div class="card-front card-face">
-        
-          <img class="card-value" src="images/tarsila.jpeg" alt = "Tarsila">
-        </div>
-      </div>
-    <div class="card"><!--card four-->
-      <div class="card-back card-face">
-
-        <img class="tile" src="images/tile.png">
-      </div>
-      <div class="card-front card-face">
-     
-        <img class="card-value" src="images/nampeyo.jpeg" alt = "Nampeyo">
-      </div>
-    </div>
-    <div class="card">
-        <div class="card-back card-face">
-       
-          <img class="tile" src="images/tile.png">
-        </div>
-        <div class="card-front card-face">
-       
-          <img class="card-value" src="images/nampeyo.jpeg" alt = "Nampeyo">
-        </div>
-      </div>
-    <div class="card"><!--card five-->
-      <div class="card-back card-face">
-    
-        <img class="tile" src="images/tile.png">
-      </div>
-      <div class="card-front card-face">
-        
-        <img class="card-value" src="images/frida-kahlo.jpeg" alt = "Frida Kahlo">
-      </div>
-    </div>
-    <div class="card">
-        <div class="card-back card-face">
-     
-          <img class="tile" src="images/tile.png">
-        </div>
-        <div class="card-front card-face">
-
-          <img class="card-value" src="images/frida-kahlo.jpeg" alt = "Frida Kahlo">
-        </div>
-      </div>
-   <div class="card"><!--card six-->
-      <div class="card-back card-face">
-   
-        <img class="tile" src="images/tile.png" alt = "tile">
-      </div>
-      <div class="card-front card-face">
-     
-        <img class="card-value" src="images/catlett.jpeg" alt = "Elizabeth Catlett">
-      </div>
-    </div>
-    <div class="card">
-        <div class="card-back card-face">
-     
-          <img class="tile" src="images/tile.png" alt = "tile">
-        </div>
-        <div class="card-front card-face">
-          
-          <img class="card-value" src="images/catlett.jpeg" alt = "Elizabeth Catlett">
-        </div>
-    </div>
-  
-    
-
-    <div class="card">
-      <div class="card-back card-face">
-       
-        <img class="tile" src="images/tile.png" alt = "tile">
-      </div>
-      <div class="card-front card-face">
-     
-        <img class="card-value" src="images/tamara.jpeg" alt = "Tamara de Lempicka">
-      </div>
-    </div>
-    <div class="card">
-        <div class="card-back card-face">
-         
-          <img class="tile" src="images/tile.png" alt = "tile">
-        </div>
-        <div class="card-front card-face">
-         
-          <img class="card-value" src="images/tamara.jpeg" alt = "Tamara de Lempicka">
-        </div>
-    </div>
-    
-    <div class="card">
-      <div class="card-back card-face">
-       
-        <img class="tile" src="images/tile.png" alt = "tile">
-      </div>
-      <div class="card-front card-face">
-      
-        <img class="card-value" src="images/yayoi-kusama.jpeg" alt = "yayoi-kusama">
-      </div>
-    </div>
-    <div class="card">
-        <div class="card-back card-face">
-         
-          <img class="tile" src="images/tile.png" alt = "tile">
-        </div>
-        <div class="card-front card-face">
-          
-          <img class="card-value" src="images/yayoi-kusama.jpeg" alt = "yayoi-kusama">
-        </div>
-    </div>
-  
-   
-    
-  
-  
-</div>
-</div> 
-</body>
-
+    <script src="app.js"></script>
+  </body>
 </html>
