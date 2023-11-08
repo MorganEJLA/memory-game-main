@@ -40,9 +40,6 @@ fetch("/data/cards.json")
     cards = [...data, ...data];
     shuffleCards();
     generateCards();
-  })
-  .catch((error) => {
-    console.error("Error fetching JSON:", error);
   });
 
 function shuffleCards() {
