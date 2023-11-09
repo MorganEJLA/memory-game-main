@@ -5,6 +5,7 @@ let lockBoard = false;
 let score = 0;
 let timerInterval;
 let timeInSeconds = 0;
+let flips = 0;
 const maxScore = 10000;
 const minTime = 120;
 let highestScore = localStorage.getItem("highestScore") || 0;
@@ -36,7 +37,9 @@ document.querySelector(".score").textContent = score;
 
 fetch("https://raw.githubusercontent.com/MorganEJLA/json-files/main/cards.json")
   .then((res) => {
-    console.log(res);
+    if (!res.ok) {
+      throw new Error(`HTTP error! Status: ${res.status}`);
+    }
     return res.json();
   })
   .then((data) => {
@@ -92,6 +95,7 @@ function flipCard() {
   } else {
     secondCard = this;
     lockBoard = true;
+    flips++;
 
     checkForMatch();
   }
@@ -102,9 +106,9 @@ function checkForMatch() {
 
   if (isMatch) {
     disableCards();
-    score++;
+    score = calculateScore(flips, timeInSeconds);
     document.querySelector(".score").textContent = score;
-    if (score === cards.length / 2) {
+    if (score === maxScore) {
       gameWon();
     } else {
       resetBoard();
@@ -131,8 +135,16 @@ function unflipCards() {
   }, 500);
 }
 
-function calculateScore(timeInSeconds) {
-  return Math.max(0, maxScore - (timeInSeconds - minTime) * 100);
+function calculateScore(flips, timeInSeconds) {
+  const maxFlips = cards.length;
+  const maxTime = minTime;
+  const maxScore = 10000;
+
+  const flipScore = (maxFlips - flips) / (maxScore / maxFlips);
+  const timeScore = Math.max(0, maxScore - (timeInSeconds - maxTime) * 100);
+
+  const finalScore = Math.floor((flipScore + timeScore) / 2);
+  return finalScore;
 }
 
 function displayHighestScore() {
