@@ -144,7 +144,19 @@ function calculateScore(flips, timeInSeconds) {
   const timeScore = Math.max(0, maxScore - (timeInSeconds - maxTime) * 100);
 
   const finalScore = Math.floor((flipScore + timeScore) / 2);
-  return finalScore;
+  const stars = calculateStars(finalScore);
+
+  return { score: finalScore, stars };
+}
+
+function calculateStars(score) {
+  if (score >= maxScore * 0.8) {
+    return "🌟🌟🌟"; // 3 stars for 80% or more
+  } else if (score >= maxScore * 0.6) {
+    return "🌟🌟"; // 2 stars for 60% or more
+  } else {
+    return "🌟"; // 1 star for less than 60%
+  }
 }
 
 function displayHighestScore() {
