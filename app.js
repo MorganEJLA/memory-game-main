@@ -35,11 +35,17 @@ function padZero(number) {
 document.querySelector(".score").textContent = score;
 
 fetch("https://raw.githubusercontent.com/MorganEJLA/json-files/main/cards.json")
-  .then((res) => res.json())
+  .then((res) => {
+    console.log(res);
+    return res.json();
+  })
   .then((data) => {
     cards = [...data, ...data];
     shuffleCards();
     generateCards();
+  })
+  .catch((error) => {
+    console.error("Error fetching the JSON file:", error);
   });
 
 function shuffleCards() {
