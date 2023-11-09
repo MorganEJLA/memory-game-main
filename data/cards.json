@@ -12,27 +12,27 @@
     "name": "bread"
   },
   {
-    "image": "assets/004-lighthouse.png",
+    "image": "https://raw.githubusercontent.com/MorganEJLA/json-files/main/assets/004-lighthouse.png",
     "name": "lighthouse"
   },
   {
-    "image": "assets/006-guitar.png",
+    "image": "https://raw.githubusercontent.com/MorganEJLA/json-files/main/assets/006-guitar.png",
     "name": "guitar"
   },
   {
-    "image": "assets/039-cheese.png",
+    "image": "https://raw.githubusercontent.com/MorganEJLA/json-files/main/assets/039-cheese.png",
     "name": "cheese"
   },
   {
-    "image": "assets/047-manjerico.png",
+    "image": "https://raw.githubusercontent.com/MorganEJLA/json-files/main/assets/047-manjerico.png",
     "name": "manjerico"
   },
   {
-    "image": "assets/031-rooster.png",
+    "image": "https://raw.githubusercontent.com/MorganEJLA/json-files/main/assets/031-rooster.png",
     "name": "rooster"
   },
   {
-    "image": "assets/037-grapes.png",
+    "image": "https://raw.githubusercontent.com/MorganEJLA/json-files/main/assets/037-grapes.png",
     "name": "grapes"
   }
 ]
