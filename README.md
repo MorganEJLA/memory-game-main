@@ -20,7 +20,7 @@ This is a simple Memory Card Game project where players can test their memory by
 
 ## Installation
 
-- Clone the repository: `git clone [repository URL]`
+- Clone the repository: `git clone [github.com/MorganEJLA/memory-game-main`
 - Open `index.html` in your preferred web browser.
 
 ## Dependencies
