@@ -34,7 +34,7 @@ function padZero(number) {
 
 document.querySelector(".score").textContent = score;
 
-fetch("/data/cards.json")
+fetch("https://raw.githubusercontent.com/MorganEJLA/json-files/main/cards.json")
   .then((res) => res.json())
   .then((data) => {
     cards = [...data, ...data];
