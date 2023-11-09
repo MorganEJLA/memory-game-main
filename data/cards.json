@@ -4,35 +4,35 @@
     "name": "portugal"
   },
   {
-    "image": "/assets/012-lavender.png",
+    "image": "assets/012-lavender.png",
     "name": "lavender"
   },
   {
-    "image": "/assets/043-bread.png",
+    "image": "assets/043-bread.png",
     "name": "bread"
   },
   {
-    "image": "/assets/004-lighthouse.png",
+    "image": "assets/004-lighthouse.png",
     "name": "lighthouse"
   },
   {
-    "image": "/assets/006-guitar.png",
+    "image": "assets/006-guitar.png",
     "name": "guitar"
   },
   {
-    "image": "/assets/039-cheese.png",
+    "image": "assets/039-cheese.png",
     "name": "cheese"
   },
   {
-    "image": "/assets/047-manjerico.png",
+    "image": "assets/047-manjerico.png",
     "name": "manjerico"
   },
   {
-    "image": "/assets/031-rooster.png",
+    "image": "assets/031-rooster.png",
     "name": "rooster"
   },
   {
-    "image": "/assets/037-grapes.png",
+    "image": "assets/037-grapes.png",
     "name": "grapes"
   }
 ]
