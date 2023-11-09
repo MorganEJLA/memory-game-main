@@ -7,7 +7,7 @@ body {
   font-family: "Nunito", sans-serif;
 }
 .container {
-  width: 70%;
+  width: 90%;
   max-width: 900px;
   margin: 0 auto;
   padding: 20px;
@@ -48,13 +48,13 @@ p {
 .grid-container {
   display: grid;
   justify-content: center;
-  grid-gap: 26px;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(115px, 1fr));
 }
 
 .card {
-  height: calc(120px / 2 * 3);
-  width: 120px;
+  height: calc(115px / 2 * 3);
+  width: 115px;
   border-radius: 10px;
   background-color: white;
   position: relative;
