@@ -2,6 +2,7 @@
 # Memory Card Game
 
 This is a simple Memory Card Game project where players can test their memory by matching pairs of cards. The game is built using HTML, CSS, and JavaScript.
+This is a part of a larger project that is being worked on, my Global Pastry Site that I am building in Django. I want to add options for picking other countries. I used favicon packs of country based icons for a fun little game to demonstrate using basic HTML CSS and JavaScript and fetching data from a JSON file i have hosted on GitHub. Eventually there will be more countries to choose from and will be integrated into my Django Site. 
 
 ## Features
 
